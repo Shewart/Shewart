@@ -35,10 +35,6 @@ const shewart = {
 
 ## Open Source Projects
 
-<table>
-<tr>
-<td width="50%">
-
 ### 🐚 [ShellUI](https://github.com/shellui-dev/shellui)
 
 **CLI-first Blazor component library inspired by shadcn/ui**
@@ -57,8 +53,7 @@ shellui add button card dialog
 
 > Own your components. Copy to your codebase, customize everything. CLI + NuGet hybrid workflow.
 
-</td>
-<td width="50%">
+---
 
 ### 📖 [ShellUI Docs](https://github.com/shellui-dev/shellui-docs-fuma)
 
@@ -71,10 +66,7 @@ shellui add button card dialog
 
 Comprehensive docs with component previews, installation guides, and theming reference. Built with Fumadocs.
 
-</td>
-</tr>
-<tr>
-<td colspan="2">
+---
 
 ### ⚙️ [.NET Backend Template](https://github.com/Shewart/dotnet-backend-template)
 
@@ -93,10 +85,6 @@ dotnet run --project MyApi.Api
 ```
 
 > Zero to production-ready API in minutes. Generic CRUD, input validation, multi-database — just add your entities.
-
-</td>
-</tr>
-</table>
 
 ---
 
