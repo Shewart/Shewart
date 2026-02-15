@@ -110,22 +110,11 @@ dotnet run --project MyApi.Api
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=shewart&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00D9FF&icon_color=00D9FF&text_color=FFFFFF&rank_icon=github" height="180" />
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=shewart&theme=tokyonight&hide_border=true&background=0D1117&stroke=00D9FF&ring=00D9FF&fire=00D9FF&currStreakLabel=00D9FF" height="180" />
+<a href="https://github.com/shewart">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=shewart&theme=tokyonight&hide_border=true&background=0D1117&stroke=00D9FF&ring=00D9FF&fire=00D9FF&currStreakLabel=00D9FF" alt="GitHub Streak" />
+</a>
 
 </div>
-
-<div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shewart&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=00D9FF&text_color=FFFFFF&langs_count=8" height="160" />
-
-</div>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=shewart&bg_color=0d1117&color=00d9ff&line=00d9ff&point=ffffff&area=true&hide_border=true&custom_title=Contribution%20Activity">
-  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=shewart&bg_color=ffffff&color=0969da&line=0969da&point=0969da&area=true&hide_border=true&custom_title=Contribution%20Activity">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=shewart&bg_color=0d1117&color=00d9ff&line=00d9ff&point=ffffff&area=true&hide_border=true&custom_title=Contribution%20Activity" alt="Activity Graph" width="100%">
-</picture>
 
 ---
 
