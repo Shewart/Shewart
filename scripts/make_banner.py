@@ -1,4 +1,4 @@
-"""Generate SHEWART banners (dark + light) styled as a GitHub contribution graph.
+"""Generate "< Shewart />" banners (dark + light) styled as a GitHub contribution graph.
 
 The name is drawn in the busiest green; every other cell is a quieter day.
 
@@ -11,15 +11,19 @@ import sys
 from pathlib import Path
 
 GLYPHS = {
+    "<": ["...", "..#", ".#.", "#..", ".#.", "..#", "..."],
+    ">": ["...", "#..", ".#.", "..#", ".#.", "#..", "..."],
+    "/": ["..#", "..#", ".#.", ".#.", ".#.", "#..", "#.."],
+    " ": [""] * 7,
     "S": [".###.", "#...#", "#....", ".###.", "....#", "#...#", ".###."],
-    "H": ["#...#", "#...#", "#...#", "#####", "#...#", "#...#", "#...#"],
-    "E": ["#####", "#....", "#....", "####.", "#....", "#....", "#####"],
-    "W": ["#...#", "#...#", "#...#", "#.#.#", "#.#.#", "##.##", "#...#"],
-    "A": [".###.", "#...#", "#...#", "#####", "#...#", "#...#", "#...#"],
-    "R": ["####.", "#...#", "#...#", "####.", "#.#..", "#..#.", "#...#"],
-    "T": ["#####", "..#..", "..#..", "..#..", "..#..", "..#..", "..#.."],
+    "h": ["#...", "#...", "###.", "#..#", "#..#", "#..#", "#..#"],
+    "e": ["....", "....", ".##.", "#..#", "####", "#...", ".###"],
+    "w": [".....", ".....", "#...#", "#...#", "#.#.#", "#.#.#", ".#.#."],
+    "a": ["....", "....", ".##.", "...#", ".###", "#..#", ".###"],
+    "r": ["....", "....", "#.##", "##..", "#...", "#...", "#..."],
+    "t": [".#.", ".#.", "###", ".#.", ".#.", ".#.", "..#"],
 }
-WORD = "SHEWART"
+WORD = "< Shewart />"
 WEEKS = 53       # columns in a year of the real graph
 GRID_W = 800     # px available for cells
 SEED = 23
@@ -46,7 +50,7 @@ def word_mask(weight):
 
 
 def levels(weight):
-    """Cell level for every (row, col): name at 4 (a few 3s), the rest quiet."""
+    """Cell level for every (row, col): name at 4, the rest quiet."""
     mask = word_mask(weight)
     rows = len(mask)
     cols = max(WEEKS, len(mask[0]) + 4 * weight)
@@ -62,16 +66,20 @@ def levels(weight):
         row = []
         for c in range(cols):
             if lit(r, c):
-                row.append(3 if rng.random() < 0.08 else 4)
+                row.append(4)
                 continue
-            span = range(-weight, weight + 1)
-            near = any(lit(r + dr, c + dc) for dr in span for dc in span if 0 <= r + dr < rows)
+            # distance to the nearest letter cell, so activity fades in away from the name
+            dist = next((d for d in range(1, 3 * weight + 1)
+                         if any(lit(r + dr, c + dc)
+                                for dr in range(-d, d + 1) for dc in range(-d, d + 1)
+                                if 0 <= r + dr < rows)), None)
             roll = rng.random()
-            # keep a dark moat around the letters so the name reads clearly
-            if near:
-                row.append(1 if roll < 0.06 else 0)
+            if dist is not None and dist <= weight:
+                row.append(0)
+            elif dist is not None and dist <= 2 * weight:
+                row.append(1 if roll < 0.14 else 0)
             else:
-                row.append(2 if roll < 0.04 else 1 if roll < 0.22 else 0)
+                row.append(2 if roll < 0.05 else 1 if roll < 0.28 else 0)
         grid.append(row)
     return grid
 
@@ -123,14 +131,14 @@ def svg(theme, weight):
     )
     text.append(f'<text x="{lx + 5 * (lg + 4) + 4:.1f}" y="{ly + lg - 1.5:.1f}">More</text>')
 
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w:.0f} {h:.0f}" width="{w:.0f}" height="{h:.0f}" role="img" aria-label="Shewart">
-  <title>Shewart</title>
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w:.0f} {h:.0f}" width="{w:.0f}" height="{h:.0f}" role="img" aria-label="&lt; Shewart /&gt;">
+  <title>&lt; Shewart /&gt;</title>
   <style>
     .k{{opacity:0;animation:in .4s ease-out both}}
     .n{{animation:in .4s ease-out both,pulse 8s ease-in-out infinite}}
 {delays}
     @keyframes in{{from{{opacity:0}}to{{opacity:1}}}}
-    @keyframes pulse{{0%,10%,100%{{opacity:1}}5%{{opacity:.45}}}}
+    @keyframes pulse{{0%,10%,100%{{opacity:1}}5%{{opacity:.7}}}}
     @media (prefers-reduced-motion:reduce){{.k,.n{{animation:none;opacity:1}}}}
     text{{font:12px {FONT};fill:{t["text"]}}}
   </style>
