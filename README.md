@@ -1,13 +1,10 @@
 <div align="center">
 
-```
- ███████╗██╗  ██╗███████╗██╗    ██╗ █████╗ ██████╗ ████████╗
- ██╔════╝██║  ██║██╔════╝██║    ██║██╔══██╗██╔══██╗╚══██╔══╝
- ███████╗███████║█████╗  ██║ █╗ ██║███████║██████╔╝   ██║   
- ╚════██║██╔══██║██╔══╝  ██║███╗██║██╔══██║██╔══██╗   ██║   
- ███████║██║  ██║███████╗╚███╔███╔╝██║  ██║██║  ██║   ██║   
- ╚══════╝╚═╝  ╚═╝╚══════╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/header-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/header-light.svg">
+  <img alt="Shewart" src="./assets/header-dark.svg" width="100%">
+</picture>
 
 **Software Engineer** · Building developer tools for the .NET ecosystem · Harare, Zimbabwe
 
