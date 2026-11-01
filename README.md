@@ -10,7 +10,7 @@
 
 [![Portfolio](https://img.shields.io/badge/ishew.art-000?style=for-the-badge&logo=googlechrome&logoColor=white)](https://ishew.art)
 [![ShellUI](https://img.shields.io/badge/shellui.dev-000?style=for-the-badge&logo=blazor&logoColor=white)](https://shellui.dev)
-[![X](https://img.shields.io/badge/@shewartdotdev-000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/shewartdotdev)
+[![X](https://img.shields.io/badge/@0xsh3ll__-000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/0xsh3ll_)
 [![Bluesky](https://img.shields.io/badge/Bluesky-000?style=for-the-badge&logo=bluesky&logoColor=0285FF)](https://bsky.app/profile/shewartdotdev.bsky.social)
 [![Email](https://img.shields.io/badge/Email-000?style=for-the-badge&logo=gmail&logoColor=EA4335)](mailto:shewartshepherd23@gmail.com)
 
@@ -32,7 +32,7 @@ I build the tools I wish existed. Right now that's **ShellUI**, a family of open
 
 ### [ShellUI](https://shellui.dev)
 
-shadcn/ui for **Blazor**. Accessible, Tailwind-styled components that the CLI copies into your project, or that you install as one NuGet package.
+shadcn/ui for **Blazor**. 90+ accessible, Tailwind-styled components that the CLI copies into your project, or that you install as one NuGet package.
 
 [![Stars](https://img.shields.io/github/stars/shellui-dev/shellui?style=flat-square&label=stars&labelColor=000&color=333)](https://github.com/shellui-dev/shellui)
 [![NuGet](https://img.shields.io/nuget/vpre/ShellUI.CLI?style=flat-square&logo=nuget&label=nuget&labelColor=000&color=333)](https://www.nuget.org/packages/ShellUI.CLI)
